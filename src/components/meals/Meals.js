@@ -10,16 +10,20 @@ const Meals = () => {
   const [name, setName] = useState('cake');
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    // before api call , loader will display
     setIsLoading(true)
     try {
       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
       .then((res) => res.json())
       .then((data) => {
         setMeals(data.meals);
+        // after fetch data ,it will gone
         setIsLoading(false)
       });
       
     } catch (error) {
+      // if there is any error , also loader will be hide
+      setIsLoading(false)
       console.log(error);
     }
   }, [name]);
@@ -39,6 +43,7 @@ const Meals = () => {
         </button>
       </div>
       <h2>Total meal : {meals.length}</h2>
+      {/* loader: if loading is true loader will display else hide */}
       <img className={`loading ${isLoading ? '' : 'hide'}`} src={loading} alt='' />
       <div className='meals-container'>
         {meals.map((meal) => (
