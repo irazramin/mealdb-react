@@ -1,0 +1,46 @@
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.searchInput {
+    width: 250px;
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 13px;
+    margin-top: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 16px;
+}
+
+.loading {
+    width: 70px;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.searchInput:focus,
+.searchBtn:focus {
+    outline: none;
+}
+
+.searchBtn {
+    padding: 13px;
+    border: 0;
+    color: #ffffff;
+    background-color: #999;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.searchBtn:hover {
+    background-color: #777;
+    transition: all .5s ease;
+}
